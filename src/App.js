@@ -35,10 +35,33 @@ function App() {
         );
     }
 
+    const AfterSubmit = () => {
+        return (
+            <>
+                <ImageWrapper>
+                    <img src={ImageThankYou} alt="image" />
+                </ImageWrapper>
+                <Result>
+                    <div>You selected {choosenRating} out of 5</div>
+                </Result>
+                <Paragraph align={"center"}>
+                    <h3>Thank you!</h3>
+                    <p>
+                        We appreciate you taking the time to give a rating.
+                        If you ever need more support, don’t hesitate to get in touch!
+                    </p>
+                </Paragraph>
+            </>
+        );
+    }
+
     return (
         <Container className="App">
             <Block>
-                <Default />
+                {isSubmitted
+                    ? <AfterSubmit />
+                    : <Default />
+                }
             </Block>
         </Container>
     );
@@ -114,6 +137,38 @@ const Paragraph = styled.div`
             maring-top: 7px;
             font-size: 15px;
         }
+    }
+
+`;
+
+const ImageWrapper = styled.div`
+    display: flex;
+    justify-content: center;
+
+    img {
+        width: 144px;
+    }
+
+    @media (min-width: 768px) {
+        img {
+            width: auto;
+        }
+    }
+`;
+
+const Result = styled.div`
+    margin-top: 24px;
+    
+    div {
+        width: fit-content;
+        margin: 0 auto;
+        padding: 5px 12px 10px 12px;
+        background-color: #262E38;
+        font-size: 14px;
+        line-height: 1.57;
+        color: #FC7614;
+        border-radius: 22.5px;
+
     }
 
 `;
