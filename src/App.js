@@ -39,7 +39,7 @@ function App() {
         return (
             <>
                 <ImageWrapper>
-                    <img src={ImageThankYou} alt="image" />
+                    <img src={ImageThankYou} alt="illustration-phone" />
                 </ImageWrapper>
                 <Result>
                     <div>You selected {choosenRating} out of 5</div>
